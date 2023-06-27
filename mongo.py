@@ -18,8 +18,8 @@ collection=db.users#選擇要操作的集合
 # 把1個資料放進資料庫
 result=collection.insert_one({
     
-    "name":"老徐",
-    "email":"c1@c1.com",
+    "name":"老版",
+    "email":"h1@h1.com",
     "gender":"男生",
     "level":2
 })
