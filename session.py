@@ -12,7 +12,7 @@ app.secret_key="123"
 #網站首頁
 @app.route("/") 
 def index():
-    return "你好"
+    return "你好嗎"
 #使用 GET 方法處理路徑
 @app.route("/hello")
 def hello():
