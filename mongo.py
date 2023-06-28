@@ -45,6 +45,7 @@ result3=collection.update_one({
     "email":"p1@p1.com"
 },{
     #要更新的方法 包含加減乘除 直接設定等
+    #unset清除
    "$set":{
        #更改的資料內容
      "name":"Wang jhenzhi"  
@@ -60,3 +61,6 @@ data=collection.find_one(ObjectId("649ab3a473fd29dc915ded06"))
 print(data)
 #取得文件中的欄位(email)
 print(data["email"])
+##更新資料
+print("符合條件的文件數量",result3.matched_count)
+print("實際更新的文件數量",result3.modified_count)
