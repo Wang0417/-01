@@ -1,5 +1,6 @@
 import pymongo
 import certifi
+from bson.objectid import ObjectId
 # 連線到雲端資料庫
 from pymongo.mongo_client import MongoClient
 from pymongo.server_api import ServerApi
@@ -38,8 +39,24 @@ result2=collection.insert_many([{
     "level":2
 },
 ])
+#更新資料的方法
+result3=collection.update_one({
+    #搜尋符合的資料
+    "email":"p1@p1.com"
+},{
+    #要更新的方法 包含加減乘除 直接設定等
+   "$set":{
+       #更改的資料內容
+     "name":"Wang jhenzhi"  
+   } 
+})
 print("資料新增成功")
 #印出加入一筆資料的ID
 print(result.inserted_id)
 #印出加入多筆資料的id
 print(result2.inserted_ids)
+#根據ObjectId尋找一個資料
+data=collection.find_one(ObjectId("649ab3a473fd29dc915ded06"))
+print(data)
+#取得文件中的欄位(email)
+print(data["email"])
